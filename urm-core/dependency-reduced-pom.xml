@@ -3,7 +3,7 @@
   <parent>
     <artifactId>urm-parent</artifactId>
     <groupId>com.iluwatar.urm</groupId>
-    <version>1.4.8</version>
+    <version>2.0.1-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>urm-core</artifactId>
@@ -12,10 +12,27 @@
   <build>
     <plugins>
       <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <configLocation>src/main/resources/checkstyle.xml</configLocation>
+          <sourceDirectories>
+            <sourceDirectory>src/test/java</sourceDirectory>
+            <sourceDirectory>src/main/java</sourceDirectory>
+          </sourceDirectories>
+        </configuration>
+      </plugin>
+      <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>11</source>
+          <target>11</target>
         </configuration>
       </plugin>
       <plugin>
@@ -59,21 +76,17 @@
         <plugins>
           <plugin>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.2.0</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
-                <phase>verify</phase>
                 <goals>
                   <goal>jar</goal>
-                  <goal>jar-no-fork</goal>
                 </goals>
               </execution>
             </executions>
           </plugin>
           <plugin>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.1.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -91,7 +104,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -109,7 +122,7 @@
     <dependency>
       <groupId>nl.jqno.equalsverifier</groupId>
       <artifactId>equalsverifier</artifactId>
-      <version>3.1.10</version>
+      <version>3.4.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>

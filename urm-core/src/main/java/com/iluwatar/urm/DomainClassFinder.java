@@ -61,22 +61,14 @@ public class DomainClassFinder {
   }
 
   private static Set<Class<?>> getClasses(URLClassLoader classLoader, String packageName) {
-    List<ClassLoader> classLoadersList = new LinkedList<>();
-    classLoadersList.add(ClasspathHelper.contextClassLoader());
-    classLoadersList.add(ClasspathHelper.staticClassLoader());
-    if (classLoader != null) {
-      classLoadersList.add(classLoader);
-    }
-    classLoaders = classLoadersList.toArray(new ClassLoader[0]);
     FilterBuilder filter = new FilterBuilder().include(FilterBuilder.prefix(packageName));
     if (!isAllowFindingInternalClasses()) {
       filter.exclude(FilterBuilder.prefix(URM_PACKAGE));
     }
     Reflections reflections = new Reflections(new ConfigurationBuilder()
         .setScanners(new SubTypesScanner(false), new ResourcesScanner())
-        .setUrls(ClasspathHelper.forClassLoader(classLoaders))
-        .filterInputsBy(filter)
-        .addClassLoaders(classLoadersList));
+        .setUrls(ClasspathHelper.forPackage(packageName, classLoaders))
+        .filterInputsBy(filter));
     return Sets.union(reflections.getSubTypesOf(Object.class),
         reflections.getSubTypesOf(Enum.class));
   }

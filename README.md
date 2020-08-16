@@ -27,7 +27,7 @@ Add to your pom.xml the following:
     <plugin>
       <groupId>com.iluwatar.urm</groupId>
       <artifactId>urm-maven-plugin</artifactId>
-      <version>1.4.8</version>
+      <version>2.0.0</version>
       <configuration>
         <!-- if outputDirectory is not set explicitly it will default to your build dir -->
         <outputDirectory>${project.basedir}/etc</outputDirectory>
@@ -73,23 +73,25 @@ or online tools to show your class diagram.
 
 ### Showcases
 
-Here are some class diagrams generated with the `urm-maven-plugin` and the PlantUML Presenter as well as PlantUML's
-free generation/hosting service.
+Here are some class diagrams generated with the `urm-maven-plugin`.
 
-[![Async Method Invocation](http://plantuml.com/plantuml/png/3SlB3G8n303HLg2090TkT6Ey5easjYD_5kYUdERmDFSXEFEWj7dh4SkVhHbywdj4prSw6Qe4ILHKRWnsfhC-Ml8iHXUPKs5OYsoZnmvzWTSaR-0_mS8KNOyov5A462erZUlQ_ny0)](https://github.com/markusmo3/uml-reverse-mapper/blob/master/examples/async-method-invocation.urm.puml)
-[![Builder](http://plantuml.com/plantuml/png/3ShB4S8m34NHLg20M0jsTECuRuW7oTRear0-Njt5kSy-6kU1D7wS4Ufl8gjt-VGuSq-7jJa28qgRGbBjcoxpHIcy6IwOOvEg2bleiO9V5MKuxTdvW9KqARh-Fm00)](https://github.com/markusmo3/uml-reverse-mapper/blob/master/examples/builder.urm.puml)
-[![Datamapper](http://plantuml.com/plantuml/png/BSkx3SCm34NHLPm1B1Rkl0qZFyH6H8dW9_7uKP7g5WVtSVNQya1QMyu8zPt8-5jULvpvJ8VLqGCzIXr2mlPEbx5HIbiD7vXZ5LQ5JVIOmSsY3Ku71_-jf4dH-Vm0)](https://github.com/markusmo3/uml-reverse-mapper/blob/master/examples/data-mapper.urm.puml)
+![Graphviz example](examples/graphviz-example.png "Graphviz example")
+![PlantUML example](examples/plantuml-example.png "PlantUML example")
+![Mermaid example](examples/mermaid-example.png "Mermaid example")
 
 ### Deploy Instructions
 
 [Performing a Release Deployment](http://central.sonatype.org/pages/apache-maven.html#performing-a-release-deployment)
-
 
 ```
 mvn clean deploy -P release
 ```
 
 ### Release notes
+
+- 2.0.0
+    - Add support for Mermaid presenter [#39](https://github.com/iluwatar/uml-reverse-mapper/pull/39)
+    - Update to Java 11 [#42](https://github.com/iluwatar/uml-reverse-mapper/issues/42) and [#56](https://github.com/iluwatar/uml-reverse-mapper/pull/56)
 
 - 1.4.8
     - Update dependencies to latest versions [#21](https://github.com/iluwatar/uml-reverse-mapper/issues/21)
