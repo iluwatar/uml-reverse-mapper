@@ -1,0 +1,57 @@
+# This action script will make sure that project gets build and checked on every commit
+# and on pull request
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches-ignore: [master]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build-ubuntu-java-8:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Set up JDK 8
+      uses: actions/setup-java@v1
+      with:
+        java-version: '8'
+        java-package: jdk
+    - name: Build and test against java 8
+      run: mvn -Djava.properties=1.8 clean compile
+  # This workflow contains a single job called "build"
+  build-ubuntu-java-11:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Set up JDK 11
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+        java-package: jdk
+    - name: Build and test against java 11
+      run: mvn -Djava.properties=11 clean compile
+  # This workflow contains a single job called "build"
+  build-ubuntu-java-14:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Set up JDK 8
+      uses: actions/setup-java@v1
+      with:
+        java-version: '14'
+        java-package: jdk
+    - name: Build and test against java 11
+      run: mvn -Djava.properties=11 clean compile
