@@ -25,6 +25,7 @@ jobs:
       with:
         java-version: '8'
         java-package: jdk
+    - uses: actions/checkout@v2
     - name: Build and test against java 8
       run: mvn -Djava.properties=1.8 clean compile
   # This workflow contains a single job called "build"
@@ -39,6 +40,7 @@ jobs:
       with:
         java-version: '11'
         java-package: jdk
+    - uses: actions/checkout@v2
     - name: Build and test against java 11
       run: mvn -Djava.properties=11 clean compile
   # This workflow contains a single job called "build"
@@ -53,5 +55,6 @@ jobs:
       with:
         java-version: '14'
         java-package: jdk
+    - uses: actions/checkout@v2
     - name: Build and test against java 11
       run: mvn -Djava.properties=11 clean compile
