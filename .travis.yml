@@ -11,3 +11,4 @@ sudo: false
 notifications:
   email:
     - iluwatar@gmail.com
+    - hemant.bothra15@gmail.com
