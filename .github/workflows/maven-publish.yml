@@ -13,7 +13,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow is to build against java 8
   build-ubuntu-java-8:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -28,7 +28,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build and test against java 8
       run: mvn -Djava.version=1.8 clean compile
-  # This workflow contains a single job called "build"
+  # This workflow IS TO BUILD AGAINST JAVA 11
   build-ubuntu-java-11:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -43,18 +43,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build and test against java 11
       run: mvn -Djava.version=11 clean compile
-  # This workflow contains a single job called "build"
-  build-ubuntu-java-14:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Set up JDK 14
-      uses: actions/setup-java@v1
-      with:
-        java-version: '14'
-        java-package: jdk
-    - uses: actions/checkout@v2
-    - name: Build and test against java 14
-      run: mvn -Djava.version=14 clean compile
+  # todo: Need to create a build against Java 14
+  # which is failing as of now for maven-plugin-plugin not supported for Java-14
+
