@@ -27,7 +27,7 @@ jobs:
         java-package: jdk
     - uses: actions/checkout@v2
     - name: Build and test against java 8
-      run: mvn -Djava.properties=1.8 clean compile
+      run: mvn -Djava.version=1.8 clean compile
   # This workflow contains a single job called "build"
   build-ubuntu-java-11:
     # The type of runner that the job will run on
@@ -42,7 +42,7 @@ jobs:
         java-package: jdk
     - uses: actions/checkout@v2
     - name: Build and test against java 11
-      run: mvn -Djava.properties=11 clean compile
+      run: mvn -Djava.version=11 clean compile
   # This workflow contains a single job called "build"
   build-ubuntu-java-14:
     # The type of runner that the job will run on
@@ -50,11 +50,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Set up JDK 8
+    - name: Set up JDK 14
       uses: actions/setup-java@v1
       with:
         java-version: '14'
         java-package: jdk
     - uses: actions/checkout@v2
-    - name: Build and test against java 11
-      run: mvn -Djava.properties=11 clean compile
+    - name: Build and test against java 14
+      run: mvn -Djava.version=14 clean compile

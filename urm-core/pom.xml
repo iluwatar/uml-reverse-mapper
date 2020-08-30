@@ -9,9 +9,6 @@
         <artifactId>urm-parent</artifactId>
         <version>2.0.1-SNAPSHOT</version>
     </parent>
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
