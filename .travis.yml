@@ -1,9 +1,6 @@
 language: java
 dist: xenial
 jdk:
-  - oraclejdk8
-  - openjdk8
-  - oraclejdk11
   - openjdk11
 
 after_success:
