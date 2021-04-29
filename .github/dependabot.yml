@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "03:00"
+  ignore:
+  - dependency-name: nl.jqno.equalsverifier:equalsverifier
+    versions:
+    - 3.5.2
+    - 3.5.3
+    - 3.5.4
+    - 3.5.5
+  - dependency-name: org.ow2.asm:asm
+    versions:
+    - "9.0"
