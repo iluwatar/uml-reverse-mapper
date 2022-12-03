@@ -25,7 +25,4 @@ jobs:
     - name: Build and analyze
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn clean verify sonar:sonar \
-        -Dsonar.host.url=https://sonarcloud.io \
-        -Dsonar.organization=iluwatar \
-        -Dsonar.projectKey=uml-reverse-mapper
+      run: mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=iluwatar -Dsonar.projectKey=uml-reverse-mapper
