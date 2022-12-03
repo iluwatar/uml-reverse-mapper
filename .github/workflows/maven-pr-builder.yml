@@ -22,5 +22,10 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
 
-    - name: Build with Maven
-      run: mvn clean verify
+    - name: Build and analyze
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: mvn clean verify sonar:sonar \
+        -Dsonar.host.url=https://sonarcloud.io \
+        -Dsonar.organization=iluwatar \
+        -Dsonar.projectKey=uml-reverse-mapper
