@@ -1,5 +1,8 @@
 package com.iluwatar.urm.domain;
 
+/**
+ * Visibility.
+ */
 public enum Visibility {
   PUBLIC("+"), PROTECTED("#"), DEFAULT("~"), PRIVATE("-");
 

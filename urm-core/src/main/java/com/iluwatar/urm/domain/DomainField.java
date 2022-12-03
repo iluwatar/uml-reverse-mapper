@@ -15,7 +15,8 @@ public class DomainField {
 
   /**
    * get the name of the field.
-   * @return
+   *
+   * @return name
    */
   public String getUmlName() {
     if (field.isEnumConstant()) {

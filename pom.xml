@@ -83,8 +83,8 @@
         <plugin-annotations.version>3.7.0</plugin-annotations.version>
         <maven-project.version>3.0-alpha-2</maven-project.version>
         <maven-plugin.version>3.7.0</maven-plugin.version>
-        <checkstyle-maven-plugin.version>3.2.0</checkstyle-maven-plugin.version>
-        <checkstyle.version>8.27</checkstyle.version>
+        <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
+        <checkstyle.version>10.3.2</checkstyle.version>
     </properties>
     <build>
         <pluginManagement>
@@ -92,14 +92,24 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${checkstyle-maven-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.puppycrawl.tools</groupId>
-                            <artifactId>checkstyle</artifactId>
-                            <version>${checkstyle.version}</version>
-                        </dependency>
-                    </dependencies>
+                    <version>${maven-checkstyle-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>validate</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <phase>validate</phase>
+                            <configuration>
+                                <configLocation>google_checks.xml</configLocation>
+                                <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+                                <encoding>UTF-8</encoding>
+                                <failOnViolation>true</failOnViolation>
+                                <violationSeverity>warning</violationSeverity>
+                                <includeTestSourceDirectory>false</includeTestSourceDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>

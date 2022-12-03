@@ -1,14 +1,18 @@
 package com.iluwatar.urm.domain;
 
+/**
+ * EdgeType.
+ */
 public enum EdgeType {
 
   ONE_TO_ONE, MANY_TO_ONE, MANY_TO_MANY, ONE_TO_MANY, EXTENDS, INNER_CLASS, STATIC_INNER_CLASS;
 
   /**
    * method to resolve edge type based on source and target.
+   *
    * @param source of type EdgeType.
    * @param target of type EdgeType.
-   * @return
+   * @return edge type
    */
   public static EdgeType resolveEdgeType(EdgeType source, EdgeType target) {
     if (source.equals(target)) {

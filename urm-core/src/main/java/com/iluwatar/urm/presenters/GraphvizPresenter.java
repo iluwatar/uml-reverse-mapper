@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
+/**
+ * GraphVizPresenter.
+ */
 public class GraphvizPresenter implements Presenter {
 
   public static final String DOMAIN_DECLARATION = "digraph domain {\n";

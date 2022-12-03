@@ -1,7 +1,6 @@
 package com.iluwatar.urm.domain;
 
 import com.thoughtworks.paranamer.AdaptiveParanamer;
-
 import com.thoughtworks.paranamer.BytecodeReadingParanamer;
 import com.thoughtworks.paranamer.DefaultParanamer;
 import com.thoughtworks.paranamer.NullParanamer;
@@ -38,7 +37,8 @@ public abstract class DomainExecutable<T extends Executable> {
 
   /**
    * construct the executable name.
-   * @return
+   *
+   * @return name
    */
   public String getUmlName() {
     // Have to do the old for loop way because Paranamer doesnt have a nice interface

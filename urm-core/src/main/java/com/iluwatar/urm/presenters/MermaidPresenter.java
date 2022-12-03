@@ -11,8 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-
-
+/**
+ * MermaidPresenter.
+ */
 public class MermaidPresenter implements Presenter {
   public static final String FILE_PREAMBLE = "classDiagram";
 

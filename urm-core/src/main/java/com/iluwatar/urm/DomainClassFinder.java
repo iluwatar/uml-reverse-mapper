@@ -16,6 +16,9 @@ import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
 
+/**
+ * Finds domain classes.
+ */
 public class DomainClassFinder {
 
   private static final Logger logger = Logger.getLogger(DomainClassFinder.class.getName());
@@ -27,6 +30,7 @@ public class DomainClassFinder {
 
   /**
    * method to find and filter classes using reflections.
+   *
    * @param packages list of packages
    * @param ignores list of ignores
    * @param classLoader URL classloader object

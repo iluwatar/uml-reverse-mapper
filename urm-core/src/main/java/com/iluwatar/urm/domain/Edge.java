@@ -5,6 +5,9 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+/**
+ * Edge is a relation between classes.
+ */
 public class Edge {
 
   public final DomainClass source;
@@ -14,6 +17,7 @@ public class Edge {
 
   /**
    * constructor for the class.
+   *
    * @param source DomainClass.
    * @param target DomainClass.
    * @param type EdgeType.

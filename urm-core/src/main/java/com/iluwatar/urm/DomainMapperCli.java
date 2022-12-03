@@ -18,6 +18,9 @@ import org.apache.commons.cli.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Domain mapper command line.
+ */
 public class DomainMapperCli {
 
   private static final Logger log = LoggerFactory.getLogger(DomainMapperCli.class);
@@ -29,6 +32,7 @@ public class DomainMapperCli {
 
   /**
    * run method for cli class.
+   *
    * @param args input arguments
    * @throws ClassNotFoundException exception
    * @throws IOException exception

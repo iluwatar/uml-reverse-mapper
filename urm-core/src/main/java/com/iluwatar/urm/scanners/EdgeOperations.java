@@ -8,24 +8,25 @@ import com.iluwatar.urm.domain.Direction;
 import com.iluwatar.urm.domain.DomainClass;
 import com.iluwatar.urm.domain.Edge;
 import com.iluwatar.urm.domain.EdgeType;
-
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-
-
+/**
+ * Operations on edges.
+ */
 public class EdgeOperations {
 
   /**
    * method for creating new edges.
+   *
    * @param sourceClass type of class
    * @param field type of class
    * @param type type of EdgeType
    * @param name type of string
-   * @return
+   * @return edge
    */
   public static Edge createEdge(Class<?> sourceClass, Class<?> field, EdgeType type, String name) {
     DomainClass source = new DomainClass(sourceClass, name);
@@ -36,8 +37,9 @@ public class EdgeOperations {
   /**
    * create a list of unidirectional and bidirectional.
    * edges
+   *
    * @param edges type of list
-   * @return
+   * @return list of edges
    */
   public static List<Edge> mergeBiDirectionals(List<Edge> edges) {
     HashSet<Edge> noDuplicateSet = new HashSet<>(edges);
@@ -110,9 +112,10 @@ public class EdgeOperations {
 
   /**
    * method to get matching edge.
+   *
    * @param fieldEdges type of list
    * @param e type of Edge
-   * @return
+   * @return boolean
    */
   public static boolean relationAlreadyExists(List<Edge> fieldEdges, Edge e) {
     return fieldEdges.stream().anyMatch((Edge d) -> EdgeOperations.isSameRelation(d, e));
@@ -120,9 +123,10 @@ public class EdgeOperations {
 
   /**
    * method to get matching relation.
+   *
    * @param fieldEdges type of list
    * @param e type of Edge
-   * @return
+   * @return optional edge
    */
   public static Optional<Edge> getMatchingRelation(List<Edge> fieldEdges, Edge e) {
     List<Edge> edges = fieldEdges.stream()

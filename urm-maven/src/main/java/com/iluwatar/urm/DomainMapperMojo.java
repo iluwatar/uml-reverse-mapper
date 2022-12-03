@@ -26,7 +26,9 @@ import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.apache.maven.project.MavenProject;
 import org.reflections.Reflections;
 
-
+/**
+ * DomainMapperMojo.
+ */
 @Mojo(name = "map", defaultPhase = LifecyclePhase.PROCESS_CLASSES,
     requiresDependencyResolution = ResolutionScope.COMPILE)
 public class DomainMapperMojo extends AbstractMojo {

@@ -13,6 +13,9 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * DomainMapper controls the domain scanning.
+ */
 public class DomainMapper {
 
   private static final Logger log = LoggerFactory.getLogger(DomainMapper.class);
@@ -30,6 +33,7 @@ public class DomainMapper {
 
   /**
    * method to get representation.
+   *
    * @return Representation type
    * @throws ClassNotFoundException exception
    */

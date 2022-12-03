@@ -59,7 +59,8 @@ public class DomainClass {
 
   /**
    * method to get declared fields of the class.
-   * @return
+   *
+   * @return list of fields
    */
   public List<DomainField> getFields() {
     if (fieldList == null) {
@@ -76,7 +77,8 @@ public class DomainClass {
 
   /**
    * method to get declared constructors of the class.
-   * @return
+   *
+   * @return list of constructors
    */
   public List<DomainConstructor> getConstructors() {
     if (constructorList == null) {
@@ -96,7 +98,8 @@ public class DomainClass {
 
   /**
    * method to get declared methods of the class.
-   * @return
+   *
+   * @return list of methods
    */
   public List<DomainMethod> getMethods() {
     if (methodList == null) {
@@ -130,8 +133,9 @@ public class DomainClass {
   }
 
   /**
-   * method to get classtype of the class.
-   * @return
+   * method to get class type of the class.
+   *
+   * @return class type
    */
   public DomainClassType getClassType() {
     if (clazz.isInterface()) {

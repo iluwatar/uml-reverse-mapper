@@ -2,9 +2,11 @@ package com.iluwatar.urm.presenters;
 
 import com.iluwatar.urm.domain.DomainClass;
 import com.iluwatar.urm.domain.Edge;
-
 import java.util.List;
 
+/**
+ * Presenter.
+ */
 public interface Presenter {
 
   Representation describe(List<DomainClass> domainObjects, List<Edge> edges);
@@ -13,6 +15,7 @@ public interface Presenter {
 
   /**
    * Factory method for {@link Presenter}.
+   *
    * @param presenterString as a String
    * @return chosen Presenter
    */

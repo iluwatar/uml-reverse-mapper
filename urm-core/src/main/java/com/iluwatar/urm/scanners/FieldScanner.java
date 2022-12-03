@@ -24,7 +24,9 @@ import org.reflections.ReflectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * FieldScanner.
+ */
 public class FieldScanner extends AbstractScanner {
 
   private static final String NAME_FOR_INNERCLASS = null;
@@ -38,7 +40,8 @@ public class FieldScanner extends AbstractScanner {
 
   /**
    * method to get all the edges as a list.
-   * @return
+   *
+   * @return list of edges
    */
   public List<Edge> getEdges() {
     List<Edge> edges = new ArrayList<>();
