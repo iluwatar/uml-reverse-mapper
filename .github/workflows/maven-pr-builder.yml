@@ -24,5 +24,6 @@ jobs:
 
     - name: Build and analyze
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn clean verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=iluwatar -Dsonar.projectKey=iluwatar_uml-reverse-mapper -Dsonar.pullrequest.branch=${GITHUB_HEAD_REF} -Dsonar.pullrequest.base=master
+      run: mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
