@@ -93,10 +93,14 @@ public class FieldScanner extends AbstractScanner {
             // (latter needed because of java.util.MethodHandles)
             return;
           }
-          Class<?> outerClass = ReflectionUtils.forName(outerName.replaceAll("/", "."),
-              DomainClassFinder.classLoaders);
-          Class<?> innerClass = ReflectionUtils.forName(name.replaceAll("/", "."),
-              DomainClassFinder.classLoaders);
+          Class<?> outerClass = null;
+          Class<?> innerClass = null;
+          try {
+            outerClass = Class.forName(outerName.replaceAll("/", "."));
+            innerClass = Class.forName(name.replaceAll("/", "."));
+          } catch (ClassNotFoundException e) {
+            return;
+          }
           if (innerClass.equals(outerClass) || clazz.equals(outerClass)) {
             // To ensure we only add one Relation for each couple,
             // the outerClass relations are thrown aboard

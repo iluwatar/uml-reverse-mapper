@@ -74,12 +74,6 @@ public class DomainMapperMojo extends AbstractMojo {
         Files.createDirectories(dir);
       }
 
-      if (!getLog().isDebugEnabled()) {
-        // nullify the Reflections logger to prevent it from spamming
-        // the console if we aren't in debug mode
-        Reflections.log = null;
-      }
-
       if (!Files.exists(path)) {
         List<URL> projectClasspathList = getClasspathUrls();
         DomainMapper mapper = DomainMapper.create(selectedPresenter, packages, ignores,

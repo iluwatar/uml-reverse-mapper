@@ -65,9 +65,9 @@ public class DomainClassFinder {
   }
 
   private static Set<Class<?>> getClasses(URLClassLoader classLoader, String packageName) {
-    FilterBuilder filter = new FilterBuilder().include(FilterBuilder.prefix(packageName));
+    FilterBuilder filter = new FilterBuilder().includePackage(packageName);
     if (!isAllowFindingInternalClasses()) {
-      filter.exclude(FilterBuilder.prefix(URM_PACKAGE));
+      filter.excludePackage(URM_PACKAGE);
     }
     Reflections reflections = new Reflections(new ConfigurationBuilder()
         .setScanners(new SubTypesScanner(false), new ResourcesScanner())
