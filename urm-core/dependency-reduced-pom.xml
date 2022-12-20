@@ -140,21 +140,13 @@
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>4.9.0</version>
+      <artifactId>mockito-inline</artifactId>
+      <version>4.10.0</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
-          <artifactId>byte-buddy-agent</artifactId>
-          <groupId>net.bytebuddy</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>byte-buddy</artifactId>
-          <groupId>net.bytebuddy</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>objenesis</artifactId>
-          <groupId>org.objenesis</groupId>
+          <artifactId>mockito-core</artifactId>
+          <groupId>org.mockito</groupId>
         </exclusion>
       </exclusions>
     </dependency>
