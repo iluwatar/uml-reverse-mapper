@@ -88,19 +88,3 @@ Here are some class diagrams generated with the `urm-maven-plugin`.
 export GPG_TTY=$(tty)
 mvn clean deploy -P release
 ```
-
-### Release notes
-
-- 2.0.0
-    - Add support for Mermaid presenter [#39](https://github.com/iluwatar/uml-reverse-mapper/pull/39)
-    - Update to Java 11 [#42](https://github.com/iluwatar/uml-reverse-mapper/issues/42) and [#56](https://github.com/iluwatar/uml-reverse-mapper/pull/56)
-
-- 1.4.8
-    - Update dependencies to latest versions [#21](https://github.com/iluwatar/uml-reverse-mapper/issues/21)
-    - Work on Java 11 compatibility [#18](https://github.com/iluwatar/uml-reverse-mapper/issues/18)
-    - Create directories for the output file, if they don't exist
-
-- 1.4.7
-    - Update README.md instruction [#20](https://github.com/iluwatar/uml-reverse-mapper/issues/20)
-    - Presenter can not be chosen via command line parameter [#22](https://github.com/iluwatar/uml-reverse-mapper/issues/22)
-    - Presenter can not be chosen via plugin parameters [#23](https://github.com/iluwatar/uml-reverse-mapper/issues/23)
