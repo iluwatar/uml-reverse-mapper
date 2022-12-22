@@ -85,6 +85,7 @@ Here are some class diagrams generated with the `urm-maven-plugin`.
 [Performing a Release Deployment](http://central.sonatype.org/pages/apache-maven.html#performing-a-release-deployment)
 
 ```
+export GPG_TTY=$(tty)
 mvn clean deploy -P release
 ```
 
