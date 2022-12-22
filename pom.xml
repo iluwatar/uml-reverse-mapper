@@ -113,6 +113,9 @@
                                 <failOnViolation>true</failOnViolation>
                                 <violationSeverity>warning</violationSeverity>
                                 <includeTestSourceDirectory>false</includeTestSourceDirectory>
+                                <sourceDirectories>
+                                    <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                                </sourceDirectories>
                             </configuration>
                         </execution>
                     </executions>
