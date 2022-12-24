@@ -49,14 +49,13 @@ public class DomainMapperMojoTest {
     MockitoAnnotations.initMocks(this);
     when(project.getCompileClasspathElements()).thenReturn(Arrays.asList("foo", "bar"));
     when(project.getName()).thenReturn(PROJECT_NAME);
+    DomainClassFinder.ALLOW_FINDING_INTERNAL_CLASSES = true;
   }
 
   @SuppressWarnings({"rawtypes", "unchecked"})
   @Test
   public void testPlantUmlExecute() throws MojoExecutionException,
           MojoFailureException, IOException {
-    Properties props = System.getProperties();
-    props.setProperty("DomainClassFinder.allowFindingInternalClasses", "true");
     packages.add("com.iluwatar.urm.testdomain");
     Path pumlPath = Paths.get(PROJECT_NAME + ".urm.puml");
     try {
