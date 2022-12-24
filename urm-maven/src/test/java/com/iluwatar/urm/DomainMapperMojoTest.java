@@ -1,7 +1,7 @@
 package com.iluwatar.urm;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
 import java.io.File;
@@ -12,6 +12,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
+
 import org.apache.maven.artifact.DependencyResolutionRequiredException;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -54,12 +56,19 @@ public class DomainMapperMojoTest {
   @Test
   public void testPlantUmlExecute() throws MojoExecutionException,
       ClassNotFoundException, MojoFailureException, IOException {
-    packages.add("com.iluwatar.testdomain");
-    mojo.execute();
-
+    Properties props = System.getProperties();
+    props.setProperty("DomainClassFinder.allowFindingInternalClasses", "true");
+    packages.add("com.iluwatar.urm.testdomain");
     Path pumlPath = Paths.get(PROJECT_NAME + ".urm.puml");
-    assertThat(Files.exists(pumlPath), is(true));
-    Files.delete(pumlPath);
+    try {
+      mojo.execute();
+      assertTrue(Files.exists(pumlPath));
+      List<String> strings = Files.readAllLines(pumlPath);
+      assertEquals(1, strings.stream().filter(s -> s.contains("package com.iluwatar.urm.testdomain")).toList().size());
+      assertEquals(2, strings.stream().filter(s -> s.contains("TestPojo")).toList().size());
+    } finally {
+      Files.delete(pumlPath);
+    }
   }
 
   @Test(expected = MojoFailureException.class)

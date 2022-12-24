@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.iluwatar.urm</groupId>
     <artifactId>urm-parent</artifactId>
-    <version>2.2.0-SNAPSHOT</version>
+    <version>2.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>UML Reverse Mapper</name>
     <description>Automatically generate class diagram from your code</description>

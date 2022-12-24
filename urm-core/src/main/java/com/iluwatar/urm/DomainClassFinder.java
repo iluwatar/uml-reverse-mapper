@@ -38,13 +38,6 @@ public class DomainClassFinder {
    */
   public static List<Class<?>> findClasses(final List<String> packages, List<String> ignores,
                                            final URLClassLoader classLoader) {
-    switch ("myTest") {
-      default:
-        break;
-      case "ra": {
-      }
-
-    }
     return packages.stream()
         .map(packageName -> getClasses(classLoader, packageName))
         .flatMap(Collection::stream)
