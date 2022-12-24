@@ -1,6 +1,5 @@
 package com.iluwatar.urm;
 
-import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
@@ -55,7 +54,7 @@ public class DomainMapperMojoTest {
   @SuppressWarnings({"rawtypes", "unchecked"})
   @Test
   public void testPlantUmlExecute() throws MojoExecutionException,
-      ClassNotFoundException, MojoFailureException, IOException {
+          MojoFailureException, IOException {
     Properties props = System.getProperties();
     props.setProperty("DomainClassFinder.allowFindingInternalClasses", "true");
     packages.add("com.iluwatar.urm.testdomain");
@@ -73,7 +72,7 @@ public class DomainMapperMojoTest {
 
   @Test(expected = MojoFailureException.class)
   public void failsWithNoPackagesDefined() throws MojoExecutionException,
-      ClassNotFoundException, MojoFailureException {
+          MojoFailureException {
     mojo.execute();
   }
 }

@@ -3,7 +3,7 @@
   <parent>
     <artifactId>urm-parent</artifactId>
     <groupId>com.iluwatar.urm</groupId>
-    <version>2.1.0</version>
+    <version>2.1.1-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>urm-core</artifactId>
@@ -79,21 +79,17 @@
         <plugins>
           <plugin>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.2.1</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
-                <phase>verify</phase>
                 <goals>
                   <goal>jar</goal>
-                  <goal>jar-no-fork</goal>
                 </goals>
               </execution>
             </executions>
           </plugin>
           <plugin>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.4.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
