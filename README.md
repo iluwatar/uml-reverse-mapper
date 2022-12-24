@@ -69,7 +69,7 @@ directory. Default value of `includeTestDirectory` configuration parameter is fa
 - `presenter` parameter control which presenter is used. Can be `graphviz`, `plantuml` or `mermaid`.
 
 When `process-classes` life-cycle phase gets executed, the class diagram will be saved to the location specified by `outputDirectory` parameter. If not specified the file is saved
-to `/target/${project.name}.urm.dot` or `/target/${project.name}.urm.puml`. Use this file with your local
+to `/target/${project.name}.urm.<ext>`, where <ext> is one of `dot` (graphiv), `puml` (plantuml), or `mmd` (mermaid). Use this file with your local
 or online tools to show your class diagram.
 
 ### Showcases
