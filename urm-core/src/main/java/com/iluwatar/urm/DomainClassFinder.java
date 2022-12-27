@@ -37,7 +37,7 @@ public class DomainClassFinder {
    * @return list of classes
    */
   public static List<Class<?>> findClasses(final List<String> packages, List<String> ignores,
-                                           final URLClassLoader classLoader) {
+                                           final ClassLoader classLoader) {
     return packages.stream()
         .map(packageName -> getClasses(classLoader, packageName))
         .flatMap(Collection::stream)
@@ -57,17 +57,18 @@ public class DomainClassFinder {
     return !clazz.getSimpleName().equals("");
   }
 
-  private static Set<Class<?>> getClasses(URLClassLoader classLoader, String packageName) {
+  private static Set<Class<?>> getClasses(ClassLoader classLoader, String packageName) {
     FilterBuilder filter = new FilterBuilder().includePackage(packageName);
     if (!isAllowFindingInternalClasses()) {
       filter.excludePackage(URM_PACKAGE);
     }
     Reflections reflections = new Reflections(new ConfigurationBuilder()
-        .setScanners(new SubTypesScanner(false), new ResourcesScanner())
-        .setUrls(ClasspathHelper.forPackage(packageName, classLoaders))
+        .setScanners(new SubTypesScanner(false),new ResourcesScanner())
+        .addClassLoaders(classLoader)
+        .forPackage(packageName, classLoader)
         .filterInputsBy(filter));
-    return Sets.union(reflections.getSubTypesOf(Object.class),
-        reflections.getSubTypesOf(Enum.class));
+    Set<Class<?>> classes = Sets.union(reflections.getSubTypesOf(Object.class), reflections.getSubTypesOf(Enum.class));
+    return classes;
   }
 
   public static boolean isAllowFindingInternalClasses() {

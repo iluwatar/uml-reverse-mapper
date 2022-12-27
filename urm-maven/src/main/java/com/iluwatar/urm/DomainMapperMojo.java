@@ -76,10 +76,14 @@ public class DomainMapperMojo extends AbstractMojo {
 
       if (!Files.exists(path)) {
         List<URL> projectClasspathList = getClasspathUrls();
+        getLog().info("outputting project classpath list");
+        projectClasspathList.stream().forEach((url) -> getLog().info(url.toString()));
+        getLog().info("executing domain mapper");
         DomainMapper mapper = DomainMapper.create(selectedPresenter, packages, ignores,
             new URLClassLoader(projectClasspathList.toArray(new URL[projectClasspathList.size()])));
-
         Representation representation = mapper.describeDomain();
+        getLog().info("outputting representation");
+        getLog().info(representation.getContent());
         Files.write(path, representation.getContent().getBytes());
         getLog().info(fileName + " successfully written to: \""
             + path
