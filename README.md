@@ -88,4 +88,3 @@ Here are some class diagrams generated with the `urm-maven-plugin`.
 export GPG_TTY=$(tty)
 mvn clean deploy -P release
 ```
-
