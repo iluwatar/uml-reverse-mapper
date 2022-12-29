@@ -35,7 +35,7 @@ public class DomainMapperMojo extends AbstractMojo {
 
   @Parameter(defaultValue = "${project.basedir}", property = "outputDirectory", required = true)
   private File outputDirectory;
-  @Component
+  @Parameter(defaultValue = "${project}", readonly = true)
   private MavenProject project;
   @Parameter(property = "map.packages", required = true)
   private List<String> packages;
