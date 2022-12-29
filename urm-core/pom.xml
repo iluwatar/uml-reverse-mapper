@@ -72,7 +72,6 @@
                         <configuration>
                             <configLocation>google_checks.xml</configLocation>
                             <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
-                            <encoding>UTF-8</encoding>
                             <failOnViolation>true</failOnViolation>
                             <violationSeverity>warning</violationSeverity>
                             <includeTestSourceDirectory>false</includeTestSourceDirectory>
@@ -83,10 +82,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
