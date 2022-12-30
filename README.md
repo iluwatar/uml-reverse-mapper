@@ -13,7 +13,7 @@ The tool is available in command line version (urm-core) and Maven plugin (urm-m
 
 ### Using from the command-line
 
-Build the `urm-core` project with `mvn clean package` and grab the generated artifact `urm-core.jar`. Then you need the archive that will be analyzed. In this example we use `abstract-factory.jar` and assume the package name to be `com.iluwatar.abstractfactory`. Place the jar-files in the same directory and execute the following command.
+Build the `urm-core` project with `./mvnw clean package` and grab the generated artifact `urm-core.jar`. Then you need the archive that will be analyzed. In this example we use `abstract-factory.jar` and assume the package name to be `com.iluwatar.abstractfactory`. Place the jar-files in the same directory and execute the following command.
 
     java -cp abstract-factory.jar:urm-core.jar com.iluwatar.urm.DomainMapperCli -p com.iluwatar.abstractfactory -i com.iluwatar.abstractfactory.Castle
 
@@ -52,6 +52,13 @@ Add to your pom.xml the following:
           </goals>
         </execution>
       </executions>
+      <dependencies>
+        <dependency>
+          <groupId>com.example</groupId>
+          <artifactId>example</artifactId>
+          <version>1.0.0</version>
+        </dependency>
+      </dependencies>
     </plugin>
   </plugins>
 </build>
@@ -61,7 +68,7 @@ Add to your pom.xml the following:
 diagram 
 - `ignores` configuration parameter contains a list of types that should be excluded from the class
 diagram
-- `Dependencies` list should contain the artifacts where the classes are found. See https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_dependencies_Tag
+- `dependencies` list should contain the artifacts where the classes are found. See https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_dependencies_Tag
 - `includeMainDirectory` configuration parameter indicates to include classes of src/main/java 
 directory. Default value of `includeMainDirectory` is true. 
 - `includeTestDirectory` configuration parameter indicates to include classes of src/test/java 
@@ -86,6 +93,5 @@ Here are some class diagrams generated with the `urm-maven-plugin`.
 
 ```
 export GPG_TTY=$(tty)
-mvn clean deploy -P release
+./mvnw clean deploy -P release
 ```
-
