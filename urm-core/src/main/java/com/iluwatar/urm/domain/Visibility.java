@@ -6,7 +6,7 @@ package com.iluwatar.urm.domain;
 public enum Visibility {
   PUBLIC("+"), PROTECTED("#"), DEFAULT("~"), PRIVATE("-");
 
-  private String umlRepresentation;
+  private final String umlRepresentation;
 
   Visibility(String umlRepresentation) {
     this.umlRepresentation = umlRepresentation;

@@ -165,8 +165,8 @@ public class EdgeOperations {
         return false;
       } else if (obj instanceof UnorderedTuple) {
         UnorderedTuple<?, ?> tuple = (UnorderedTuple) obj;
-        return this.left.equals(tuple.left) && this.right.equals(tuple.right)
-            || this.left.equals(tuple.right) && this.right.equals(tuple.left);
+        return (this.left.equals(tuple.left) && this.right.equals(tuple.right))
+            || (this.left.equals(tuple.right) && this.right.equals(tuple.left));
       } else {
         return false;
       }

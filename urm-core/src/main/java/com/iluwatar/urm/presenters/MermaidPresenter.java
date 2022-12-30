@@ -137,8 +137,11 @@ public class MermaidPresenter implements Presenter {
       targetName = " \"-" + edge.source.getDescription() + "\" " + targetName;
     }
 
-    return String.format("%s %s %s", sourceName, arrow, targetName)
-        + (arrowDescription != null ? " : " + arrowDescription : "");
+    var description = String.format("%s %s %s", sourceName, arrow, targetName);
+    if (arrowDescription != null) {
+      description += " : " + arrowDescription;
+    }
+    return description;
   }
 
   private String describeInheritance(List<Edge> edges) {
