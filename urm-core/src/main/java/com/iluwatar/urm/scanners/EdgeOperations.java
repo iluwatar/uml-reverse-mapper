@@ -3,11 +3,11 @@ package com.iluwatar.urm.scanners;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 
-import com.google.common.collect.Lists;
 import com.iluwatar.urm.domain.Direction;
 import com.iluwatar.urm.domain.DomainClass;
 import com.iluwatar.urm.domain.Edge;
 import com.iluwatar.urm.domain.EdgeType;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -46,7 +46,7 @@ public class EdgeOperations {
     Collection<List<Edge>> groupedEdges = groupEdges(noDuplicateSet);
     List<Edge> uniDirectionals = takeSingleItemsGroups(groupedEdges);
     List<Edge> biDirectionals = mergeNonSingleGroups(groupedEdges);
-    List<Edge> mergedEdges = Lists.newArrayList();
+    List<Edge> mergedEdges = new ArrayList<>();
     mergedEdges.addAll(uniDirectionals);
     mergedEdges.addAll(biDirectionals);
     return mergedEdges;
@@ -79,7 +79,7 @@ public class EdgeOperations {
         .flatMap(Collection::stream)
         .map(EdgeOperations::mergeEdges)
         .collect(toList());
-    List<Edge> newEdges = Lists.newArrayList();
+    List<Edge> newEdges = new ArrayList<>();
     newEdges.addAll(multiReferenceUniDirectionals);
     newEdges.addAll(biDirectionals);
     return newEdges;
@@ -92,7 +92,7 @@ public class EdgeOperations {
   }
 
   private static List<List<Edge>> groupBySource(List<Edge> edges) {
-    return Lists.newArrayList(edges.stream()
+    return new ArrayList<>(edges.stream()
         .collect(groupingBy(edge -> edge.source.getClassName()))
         .values());
   }
@@ -165,8 +165,8 @@ public class EdgeOperations {
         return false;
       } else if (obj instanceof UnorderedTuple) {
         UnorderedTuple<?, ?> tuple = (UnorderedTuple) obj;
-        return this.left.equals(tuple.left) && this.right.equals(tuple.right)
-            || this.left.equals(tuple.right) && this.right.equals(tuple.left);
+        return (this.left.equals(tuple.left) && this.right.equals(tuple.right))
+            || (this.left.equals(tuple.right) && this.right.equals(tuple.left));
       } else {
         return false;
       }
@@ -193,7 +193,7 @@ public class EdgeOperations {
     }
 
     private static <T> List<Tuple<T, T>> makePairs(List<T> a, List<T> b) {
-      List<Tuple<T, T>> pairs = Lists.newArrayList();
+      List<Tuple<T, T>> pairs = new ArrayList<>();
       if (a.size() > b.size()) {
         for (int i = 0; i < a.size(); i++) {
           pairs.add(new Tuple<>(a.get(i), b.get(i % b.size())));

@@ -1,10 +1,7 @@
 package com.iluwatar.urm;
 
-import com.google.common.collect.Sets;
-import java.net.URLClassLoader;
 import java.util.Collection;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -12,7 +9,6 @@ import java.util.stream.Collectors;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 import org.reflections.scanners.SubTypesScanner;
-import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
 
@@ -68,14 +64,16 @@ public class DomainClassFinder {
               .addClassLoaders(classLoader)
               .forPackage(packageName, classLoader)
               .filterInputsBy(filter));
-      Set<Class<?>> classes = Sets.union(reflections.getSubTypesOf(Object.class), reflections.getSubTypesOf(Enum.class));
+      Set<Class<?>> classes = reflections.getSubTypesOf(Object.class);
+      classes.addAll(reflections.getSubTypesOf(Enum.class));
       return classes;
     } else {
       Reflections reflections = new Reflections(new ConfigurationBuilder()
               .setScanners(new SubTypesScanner(false), new ResourcesScanner())
               .forPackage(packageName)
               .filterInputsBy(filter));
-      Set<Class<?>> classes = Sets.union(reflections.getSubTypesOf(Object.class), reflections.getSubTypesOf(Enum.class));
+      Set<Class<?>> classes = reflections.getSubTypesOf(Object.class);
+      classes.addAll(reflections.getSubTypesOf(Enum.class));
       return classes;
     }
   }

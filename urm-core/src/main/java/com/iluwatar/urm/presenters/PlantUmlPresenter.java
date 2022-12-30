@@ -137,7 +137,6 @@ public class PlantUmlPresenter implements Presenter {
     String targetName = edge.target.getClassName();
 
     String arrow = "--";
-    String arrowDescription = null;
     // Arrows pointing from Source to Target!
     switch (edge.type) {
       case STATIC_INNER_CLASS:
@@ -157,8 +156,7 @@ public class PlantUmlPresenter implements Presenter {
       targetName = " \"-" + edge.source.getDescription() + "\" " + targetName;
     }
 
-    return String.format("%s %s %s", sourceName, arrow, targetName)
-        + (arrowDescription != null ? " : " + arrowDescription : "");
+    return String.format("%s %s %s", sourceName, arrow, targetName);
   }
 
   @Override

@@ -4,10 +4,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 
-import com.google.common.collect.Lists;
 import com.iluwatar.urm.domain.DomainClass;
 import com.iluwatar.urm.domain.Edge;
 import com.iluwatar.urm.domain.EdgeType;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 
@@ -24,7 +25,7 @@ public class HierarchyScannerTest {
 
   @Test
   public void createsProperHierarchy() {
-    List<Class<?>> hierarchicalClasses = Lists.newArrayList();
+    List<Class<?>> hierarchicalClasses = new ArrayList<>();
     hierarchicalClasses.add(Child.class);
     hierarchicalClasses.add(GrandChild.class);
     hierarchicalClasses.add(Parent.class);
@@ -36,7 +37,7 @@ public class HierarchyScannerTest {
 
   @Test
   public void doesNotIncludeNonDomainParents() {
-    List<Class<?>> hierarchicalClasses = Lists.newArrayList();
+    List<Class<?>> hierarchicalClasses = new ArrayList<>();
     hierarchicalClasses.add(Child.class);
     hierarchicalClasses.add(GrandChild.class);
     HierarchyScanner scanner = new HierarchyScanner(hierarchicalClasses);
@@ -47,7 +48,7 @@ public class HierarchyScannerTest {
 
   @Test
   public void createsProperHierarchyForInterfaces() {
-    List<Class<?>> hierarchicalClasses = Lists.newArrayList();
+    List<Class<?>> hierarchicalClasses = new ArrayList<>();
     hierarchicalClasses.add(Car.class);
     hierarchicalClasses.add(Vehicle.class);
     hierarchicalClasses.add(Transport.class);
