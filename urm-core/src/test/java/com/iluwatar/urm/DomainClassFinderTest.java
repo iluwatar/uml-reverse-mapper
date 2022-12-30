@@ -8,7 +8,6 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import net.sf.qualitytest.CoverageForPrivateConstructor;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -53,11 +52,6 @@ public class DomainClassFinderTest {
   public void filtersAnonymousClasses() throws Exception {
     List<Class<?>> classes = findClasses(ClassLoader.getSystemClassLoader(), "com.iluwatar.urm.testdomain.withanonymousclass");
     assertThat(classes.size(), is(1));
-  }
-
-  @Test
-  public void privateConstructor() {
-    CoverageForPrivateConstructor.giveMeCoverage(DomainClassFinder.class);
   }
 
   @Test
