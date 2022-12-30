@@ -117,7 +117,6 @@ public class MermaidPresenter implements Presenter {
     String targetName = edge.target.getClassName();
 
     String arrow = "--";
-    String arrowDescription = null;
     // Arrows pointing from Source to Target!
     switch (edge.type) {
       case STATIC_INNER_CLASS:
@@ -137,11 +136,7 @@ public class MermaidPresenter implements Presenter {
       targetName = " \"-" + edge.source.getDescription() + "\" " + targetName;
     }
 
-    var description = String.format("%s %s %s", sourceName, arrow, targetName);
-    if (arrowDescription != null) {
-      description += " : " + arrowDescription;
-    }
-    return description;
+    return String.format("%s %s %s", sourceName, arrow, targetName);
   }
 
   private String describeInheritance(List<Edge> edges) {
