@@ -1,0 +1,34 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "maven" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    allow:
+      - dependency-name: "org.apache.maven.plugins:maven-checkstyle-plugin"
+      - dependency-name: "org.jacoco:jacoco-maven-plugin"
+      - dependency-name: "org.apache.maven.plugins:maven-source-plugin"
+      - dependency-name: "org.apache.maven.plugins:maven-javadoc-plugin"
+      - dependency-name: "org.apache.maven.plugins:maven-surefire-plugin"
+      - dependency-name: "org.apache.maven.plugins:maven-shade-plugin"
+      - dependency-name: "org.apache.maven.plugins:maven-plugin-plugin"
+      - dependency-name: "org.sonarsource.scanner.maven:sonar-maven-plugin"
+      - dependency-name: "org.apache.commons:commons-lang3"
+      - dependency-name: "junit:junit"
+      - dependency-name: "org.mockito:mockito-inline"
+      - dependency-name: "ch.qos.logback:logback-classic"
+      - dependency-name: "org.hamcrest:hamcrest-all"
+      - dependency-name: "commons-cli:commons-cli"
+      - dependency-name: "nl.jqno.equalsverifier:equalsverifier"
+      - dependency-name: "org.ow2.asm:asm"
+      - dependency-name: "org.reflections:reflections"
+      - dependency-name: "com.thoughtworks.paranamer:paranamer"
+      - dependency-name: org.apache.maven:maven-plugin-api
+      - dependency-name: "org.apache.maven.plugin-tools:maven-plugin-annotations"
+      - dependency-name: "org.apache.maven:maven-project"
