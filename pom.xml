@@ -71,7 +71,7 @@
         <surefire.version>3.0.0-M8</surefire.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-cli.version>1.5.0</commons-cli.version>
-        <equalsverifier.version>3.12.4</equalsverifier.version>
+        <equalsverifier.version>3.13</equalsverifier.version>
         <reflections.version>0.10.2</reflections.version>
         <qualitytest.version>1.3</qualitytest.version>
         <paranamer.version>2.8</paranamer.version>
