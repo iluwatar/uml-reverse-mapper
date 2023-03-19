@@ -80,7 +80,7 @@
         <release-plugin.version>3.0.0-M7</release-plugin.version>
         <shade.version>3.4.1</shade.version>
         <plugin-api.version>3.9.0</plugin-api.version>
-        <plugin-annotations.version>3.7.1</plugin-annotations.version>
+        <plugin-annotations.version>3.8.1</plugin-annotations.version>
         <maven-project.version>3.0-alpha-2</maven-project.version>
         <maven-plugin.version>3.7.1</maven-plugin.version>
         <maven-checkstyle-plugin.version>3.2.1</maven-checkstyle-plugin.version>
