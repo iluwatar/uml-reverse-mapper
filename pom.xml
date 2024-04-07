@@ -64,7 +64,7 @@
         <hamcrest.version>1.3</hamcrest.version>
         <logback.version>1.5.3</logback.version>
         <asm.version>9.7</asm.version>
-        <jacoco.version>0.8.11</jacoco.version>
+        <jacoco.version>0.8.12</jacoco.version>
         <compiler.version>3.10.1</compiler.version>
         <source.version>3.3.0</source.version>
         <javadoc.version>3.6.3</javadoc.version>
