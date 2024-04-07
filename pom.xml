@@ -66,7 +66,7 @@
         <asm.version>9.7</asm.version>
         <jacoco.version>0.8.11</jacoco.version>
         <compiler.version>3.10.1</compiler.version>
-        <source.version>3.3.0</source.version>
+        <source.version>3.3.1</source.version>
         <javadoc.version>3.6.3</javadoc.version>
         <surefire.version>3.2.5</surefire.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
