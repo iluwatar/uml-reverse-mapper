@@ -78,7 +78,7 @@
         <nexus.version>1.6.13</nexus.version>
         <gpg.version>3.0.1</gpg.version>
         <release-plugin.version>3.0.0-M7</release-plugin.version>
-        <shade.version>3.5.2</shade.version>
+        <shade.version>3.5.3</shade.version>
         <plugin-api.version>3.9.6</plugin-api.version>
         <plugin-annotations.version>3.12.0</plugin-annotations.version>
         <maven-project.version>3.0-alpha-2</maven-project.version>
