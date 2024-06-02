@@ -67,7 +67,7 @@
         <jacoco.version>0.8.12</jacoco.version>
         <compiler.version>3.10.1</compiler.version>
         <source.version>3.3.1</source.version>
-        <javadoc.version>3.6.3</javadoc.version>
+        <javadoc.version>3.7.0</javadoc.version>
         <surefire.version>3.2.5</surefire.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
         <commons-cli.version>1.8.0</commons-cli.version>
