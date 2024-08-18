@@ -82,7 +82,7 @@
         <plugin-api.version>3.9.8</plugin-api.version>
         <plugin-annotations.version>3.13.1</plugin-annotations.version>
         <maven-project.version>3.0-alpha-2</maven-project.version>
-        <maven-plugin.version>3.13.1</maven-plugin.version>
+        <maven-plugin.version>3.14.0</maven-plugin.version>
         <maven-checkstyle-plugin.version>3.4.0</maven-checkstyle-plugin.version>
         <checkstyle.version>10.3.2</checkstyle.version>
         <!-- SonarCloud -->
