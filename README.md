@@ -2,6 +2,15 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.iluwatar.urm/urm-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.iluwatar.urm/urm-maven-plugin/)
 [![Join the chat at https://gitter.im/iluwatar/uml-reverse-mapper](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/iluwatar/uml-reverse-mapper?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+## ⚠️ Project Status: Unmaintained
+ 
+This repository is no longer actively maintained.
+
+- No new features are planned.
+- Issues and pull requests are not monitored.
+- The project may not be compatible with recent Java or Maven versions.
+
+You are welcome to fork the project if you wish to continue its development.
 
 # UML Reverse Mapper
 
