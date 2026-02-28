@@ -62,8 +62,8 @@ public class DomainMapperMojoTest {
       mojo.execute();
       assertTrue(Files.exists(pumlPath));
       List<String> strings = Files.readAllLines(pumlPath);
-      assertEquals(1, strings.stream().filter(s -> s.contains("package com.iluwatar.urm.testdomain")).toList().size());
-      assertEquals(2, strings.stream().filter(s -> s.contains("TestPojo")).toList().size());
+      assertEquals(1, strings.stream().filter(s -> s.contains("package com.iluwatar.urm.testdomain")).count());
+      assertEquals(2, strings.stream().filter(s -> s.contains("TestPojo")).count());
     } finally {
       Files.delete(pumlPath);
     }
