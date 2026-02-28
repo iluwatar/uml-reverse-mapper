@@ -24,7 +24,7 @@ public class DomainMapper {
   private final List<Class<?>> classes;
   private final Presenter presenter;
 
-  DomainMapper(Presenter presenter, final List<Class<?>> classes) {
+  public DomainMapper(Presenter presenter, final List<Class<?>> classes) {
     this.presenter = presenter;
     this.classes = classes;
     fieldScanner = new FieldScanner(classes);
